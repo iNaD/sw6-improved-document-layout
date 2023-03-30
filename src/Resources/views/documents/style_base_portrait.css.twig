@@ -1,0 +1,21 @@
+{% sw_extends '@Storefront/documents/style_base_portrait.css.twig' %}
+
+{% block document_style %}
+        {{ parent() }}
+    </style> 
+
+    <style type="text/css"> 
+        .letter-body-following {
+            margin-top: 0px;
+        }
+
+        /* Line item section */
+        .line-item-table-repeating-header {
+            vertical-align: top;
+        }
+
+        .line-item-table-repeating-header > th {
+            text-align: left;
+        }
+    </style> 
+{% endblock %}

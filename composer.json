@@ -1,0 +1,28 @@
+{
+  "name": "theinad/sw6-improved-document-layout",
+  "description": "Improved Document Layout",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Gehn",
+      "email": "me@theinad.com",
+      "homepage": "https://theinad.com"
+    }
+  ],
+  "require": {
+    "shopware/core": "6.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "TheInadImprovedDocumentLayout\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "TheInadImprovedDocumentLayout\\TheInadImprovedDocumentLayout",
+    "label": {
+      "de-DE": "Verbessertes Dokumentenlayout",
+      "en-GB": "Improved Document Layout"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/documents/base.html.twig' %}
+
+{% block table_open %}
+    {% set first = (counter.counter is divisible by(itemsPerPage) or counter.counter == 1) %}
+
+    <div class="letter-body {% if not first %}letter-body-following{% endif %}">
+        {% if config.displayLineItems %}
+            <div class="line-item-container">
+                {% block document_line_items %}
+                    {{ parent() }}
+                {% endblock %}
+        {% else %}
+            <div class="document-title-container">
+                {% block document_headline %}{% endblock %}
+            </div>
+        {% endif %}
+{% endblock %}
+
+{% block position_header %}
+    <thead>
+        <tr class="line-item-table-repeating-header">
+            <th>
+                <div class="document-title-container">
+                    {% block document_headline_repeating %}
+                        {{ block('document_headline') }}
+                    {% endblock %}
+                </div>
+            </th>
+        </tr>
+        <tr class="line-item-table-header">
+            {% block document_line_item_table_head %}
+                {{ parent() }}
+            {% endblock %}
+        </tr>
+    </thead>
+{% endblock %}
+
+{% block document_loop_page_letter_header %}{% endblock %}
+{% block document_shipping_cost_page_letter_header %}{% endblock %}
